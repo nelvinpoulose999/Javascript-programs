@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+    <script src="calculator.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+<body style="background-color: rgba(209, 209, 209, 0.582);">
+    <div class="container">
+        <div class="row">
+            <div class="col-4"></div>
+            <!-- display box -->
+            <div class="col-4 cl cal">
+                <div class="box">
+                    <input type="text" class="box" id="displaybox">
+                </div>
+                <!-- botton -->
+                <div class="bu1"> 
+                    <button type="button" onclick="backspace()" class="but" >BACK</button>
+                    <button type="button" class="but" >C</button>
+                    <button type="button" class="but" >%</button>
+                    <button type="button" class="but" >/</button>
+                </div>
+                <div class="bu2"> 
+                    <button type="button" onclick="displayText('7')" class="but" >7</button>
+                    <button type="button" onclick="displayText('8')" class="but" >8</button>
+                    <button type="button" onclick="displayText('9')" class="but" >9</button>
+                    <button type="button" onclick="displayText('*')" class="but" >X</button>
+                </div>
+                <div class="bu3"> 
+                    <button type="button" onclick="displayText('4')" class="but" >4</button>
+                    <button type="button" onclick="displayText('5')" class="but" >5</button>
+                    <button type="button" onclick="displayText('6')" class="but" >6</button>
+                    <button type="button" onclick="displayText('-')" class="but" >-</button>
+                </div>
+                <div class="bu4"> 
+                    <button type="button" onclick="displayText('1')" class="but" >1</button>
+                    <button type="button" onclick="displayText('2')" class="but" >2</button>
+                    <button type="button" onclick="displayText('3')" class="but" >3</button>
+                    <button type="button" onclick="displayText('+')" class="but" >+</button>
+                </div>
+                <div class="bu5"> 
+                    <button type="button" onclick="displayText('0')" class="but" >0</button>
+                    <button type="button" onclick="displayText('.')" class="but" >.</button>
+                    <button type="button" onclick="calculate()" class="but" style="width:146.5px ;" >=</button>
+                    
+                </div>
+                
+               
+            </div>
+            <div class="col-4"></div>
+        </div>
+
+    </div>
+</body>
+</html>

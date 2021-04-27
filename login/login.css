@@ -1,0 +1,111 @@
+.box{
+    height: 380px;
+    width: 100%;
+    background-color:  #eeeeee;
+    text-align: center;
+    border: 1px solid black;
+    position: relative;
+    top: 40px;
+    border-radius: 5px;
+    
+}
+.input{
+    position: relative;
+    top: 80px;
+    text-align: center;
+    width: 100%;
+    height: 40px;
+    font-size: large;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+.input:hover{
+    outline: none !important;
+    border: 2px solid grey;
+}
+.input:focus{
+    outline: none !important;
+    border-color: grey; 
+}
+.input1{
+    position: relative;
+    top: 85px;
+    text-align: center;
+    width: 100%;
+    height: 40px;
+    font-size: large;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+.input1:hover{
+    outline: none !important;
+    border: 2px solid grey;
+}
+.input1:focus{
+    outline: none !important;
+    border-color: grey; 
+}
+.but{
+    position: relative;
+    top: 100px;
+    text-align: center;
+    width: 100%;
+    height: 40px;
+    font-size: large;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+.psw{
+    color: black;
+    /* background-color: white; */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    text-decoration: none;
+    position: relative;
+    top: 85px;
+}
+.psw:hover{
+    text-decoration: underline;
+    color: chocolate;
+}
+.but1{
+    position: relative;
+    top: 120px;
+    text-align: center;
+    width: 100%;
+    height: 40px;
+    font-size: large;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+
+.input2{
+    position: relative;
+    top: 90px;
+    text-align: center;
+    width: 100%;
+    height: 40px;
+    font-size: large;
+    border-radius: 5px;
+    border: 1px solid grey;
+    background-color: white;
+}
+.input2:hover{
+    outline: none !important;
+    border: 2px solid grey;
+    
+}
+.input2:focus{
+    outline: none !important;
+    border-color: grey; 
+}
+.but2{
+     position: relative;
+    top: 120px; 
+    text-align: center;
+    width: 100%;
+    height: 40px;
+    font-size: large;
+    border-radius: 5px;
+    
+}

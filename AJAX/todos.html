@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Todos</h1>
+    
+        <label for=""> UserId</label>
+        <input type="text" id="uid">
+        <button type="submit" onclick="todo_value()" value="Submit">Submit</button>
+
+    
+    <div class="todos">
+
+    </div>
+</body>
+<script>
+function todo_value() {
+    var val=document.querySelector("#uid").value
+    var request=new XMLHttpRequest()
+    request.open("get","https://jsonplaceholder.typicode.com/todos")
+    request.send()
+    request.onreadystatechange=()=>{
+        if (request.readyState==4) {
+            if (request.status>=200 &request.status<300) 
+            {
+                var todos=JSON.parse(request.responseText)
+                let user=todos.filter(todo=>todo.userId==val)
+                let html_data=""
+                for (let todo of user){
+                    html_data+=`<p>${todo.userId} ${todo.title}</p>`
+                }
+                document.querySelector(".todos").innerHTML=html_data
+            }
+            
+        }
+    }
+}
+ 
+</script>
+</html>

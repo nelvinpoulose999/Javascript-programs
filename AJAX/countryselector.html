@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text " class="cntry" placeholder="Enter the country name">
+    <button onclick="fetchCountryData()">Fetch</button>
+    <table border="1">
+        <tr>
+            <td>flag</td>
+            <td>countryname</td>
+            <td>currency</td>
+            <td>population</td>
+        </tr>
+        <tbody class="result"></tbody>
+    </table>
+    
+</body>
+<script>
+    function fetchCountryData() {
+        var cntname=document.querySelector('.cntry').value
+        var request=new XMLHttpRequest()
+        request.open("get",`https://restcountries.eu/rest/v2/name/${cntname}`)
+        request.send()
+        request.onreadystatechange=()=>{
+            if (request.readyState==4) {
+                if (request.status>=200 & request.status<300 ) {
+                    var dataset=JSON.parse(request.responseText)
+                    console.log(dataset);
+                    // let cnty_name=dataset[0].name
+                    // let currencies=dataset[0].currencies[0].name
+                    // let population=dataset[0].population
+                    // let flag=dataset[0].flag
+                    let html_data=""
+                    html_data+=`<tr><td> <img src="${dataset[0].flag}"height='100px' width='100px'> </td><td>${dataset[0].name}</td><td>${dataset[0].currencies[0].name}</td><td>${dataset[0].population}</td></tr>`
+                    document.querySelector(".result").innerHTML=html_data
+                }
+                
+            }
+        }
+        
+    }
+</script>   
+</html>

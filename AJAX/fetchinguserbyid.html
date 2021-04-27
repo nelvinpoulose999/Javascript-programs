@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script type="text/javascript">
+        function get_user() {
+            var uid = document.querySelector('#id_user').value
+            var request = new XMLHttpRequest()
+            request.open("get", `https://jsonplaceholder.typicode.com/users/${uid}`)
+            request.send()
+            request.onreadystatechange = () => {
+                if (request.readyState == 4) {
+                    if (request.status >= 200 & request.status < 300) {
+                        var userData = JSON.parse(request.responseText)
+                        var html_data=""
+                        html_data += `<tr><td>${userData.name}</td><td>${userData.username}</td><td>${userData.email}</td><td>${userData.phone}</td></tr>`
+                        document.querySelector('.result').innerHTML = html_data
+                    }
+                    else {
+                        document.querySelector('.result').innerHTML = "User Not Found"
+                        alert("user not found")
+                    }
+
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <h1>users</h1>
+    <label for="">Enter UserId</label>
+    <input type="text" id="id_user">
+    <input type="submit" value="Get User" onclick="get_user()">
+
+    <table border="1px">
+        <tr>
+            <td>name</td>
+            <td>username</td>
+            <td>email</td>
+            <td>phone</td>
+        </tr>
+        <tbody class="result">
+
+        </tbody>
+    </table>
+
+
+
+</body>
+</html>
